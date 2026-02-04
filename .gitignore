@@ -1,18 +1,26 @@
-# Python cache
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
+*.egg-info/
+*.egg
+dist/
+build/
 
-# Virtual environments
+# Entornos virtuales (usar: python -m venv .venv)
 .venv/
 venv/
 env/
+ENV/
 
-# Pytest cache
+# Pytest
 .pytest_cache/
+.coverage
+htmlcov/
 
-# Editor / OS junk
+# Editor / OS
 .DS_Store
+Thumbs.db
 .vscode/
 .idea/
 

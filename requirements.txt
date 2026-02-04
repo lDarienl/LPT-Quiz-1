@@ -1,0 +1,4 @@
+# Dependencias del proyecto (Quiz 1)
+# Uso: crear venv, activar y ejecutar: pip install -r requirements.txt
+
+pytest>=7.0.0
