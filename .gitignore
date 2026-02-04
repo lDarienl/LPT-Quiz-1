@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Pytest cache
+.pytest_cache/
+
+# Editor / OS junk
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
