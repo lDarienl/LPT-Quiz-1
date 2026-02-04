@@ -13,22 +13,22 @@ flowchart TD
     A[Inicio] --> B{Operacion}
 
     B -->|loadPage| C{Hay pagina actual?}
-    C -->|Si| D[Push current -> back]
-    C -->|No| E[Clear forward]
+    C -->|Si| D["Push current to back"]
+    C -->|No| E["Clear forward"]
     D --> E
-    E --> F[current = url]
+    E --> F["current = url"]
     F --> G[Fin]
 
     B -->|goBack| H{Back vacio?}
-    H -->|Si| I[Return None]
-    H -->|No| J[Push current -> forward]
-    J --> K[current = pop(back)]
+    H -->|Si| I["Return None"]
+    H -->|No| J["Push current to forward"]
+    J --> K["current = pop back"]
     K --> G
 
     B -->|goForward| L{Forward vacio?}
     L -->|Si| I
-    L -->|No| M[Push current -> back]
-    M --> N[current = pop(forward)]
+    L -->|No| M["Push current to back"]
+    M --> N["current = pop forward"]
     N --> G
 ```
 
