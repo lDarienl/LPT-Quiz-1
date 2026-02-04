@@ -10,24 +10,25 @@ Implementación de tres problemas: navegador web, autocompletado y recomendador 
 
 ```mermaid
 flowchart TD
-    A[Inicio] --> B{Operación}
-    B -->|loadPage(url)| C[¿Hay página actual?]
-    C -->|Sí| D[Poner actual en pila back]
-    C -->|No| E[Vaciar pila forward]
+    A[Inicio] --> B{Operacion}
+
+    B -->|loadPage| C{Hay pagina actual?}
+    C -->|Si| D[Push current -> back]
+    C -->|No| E[Clear forward]
     D --> E
-    E --> F[Actual = url]
+    E --> F[current = url]
     F --> G[Fin]
 
-    B -->|goBack| H{¿Hay páginas en back?}
-    H -->|No| I[Retornar None]
-    H -->|Sí| J[Poner actual en pila forward]
-    J --> K[Actual = pop de back]
+    B -->|goBack| H{Back vacio?}
+    H -->|Si| I[Return None]
+    H -->|No| J[Push current -> forward]
+    J --> K[current = pop(back)]
     K --> G
 
-    B -->|goForward| L{¿Hay páginas en forward?}
-    L -->|No| I
-    L -->|Sí| M[Poner actual en pila back]
-    M --> N[Actual = pop de forward]
+    B -->|goForward| L{Forward vacio?}
+    L -->|Si| I
+    L -->|No| M[Push current -> back]
+    M --> N[current = pop(forward)]
     N --> G
 ```
 
